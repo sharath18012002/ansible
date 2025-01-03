@@ -1,0 +1,47 @@
+---
+- name: Install packages on the webserver
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Install Java
+      yum:
+        name: java
+        state: present
+
+    - name: Install httpd (Apache)
+      yum:
+        name: httpd
+        state: latest
+
+    - name: Install wget
+      yum:
+        name: wget
+        state: present
+
+    - name: Ensure httpd service is started and enabled
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+- name: Install packages on the dbserver
+  hosts: dbserver
+  become: yes
+  tasks:
+    - name: Install MySQL
+      yum:
+        name: mysql-server
+        state: present
+
+    - name: Install Vim
+      yum:
+        name: vim
+        state: latest
+
+    - name: Ensure MySQL service is started and enabled
+      service:
+        name: mysqld
+        state: started
+        enabled: yes
+
+

@@ -1,0 +1,8 @@
+---
+ - name: this play for wget package  download and installed
+   hosts: all
+   
+   tasks:
+    - name: this tasks for installing
+      yum: name=wget state=absent
+      become: yes

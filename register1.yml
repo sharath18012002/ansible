@@ -1,0 +1,9 @@
+---
+ - name: this play for register1 values
+   hosts: webserver
+   gather_facts: false
+   tasks:
+   - shell: "bash --version"
+     register: bash_variable
+   - debug:
+       var=bash_variable

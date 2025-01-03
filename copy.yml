@@ -1,0 +1,5 @@
+---
+ - name: copy packages.yml
+   hosts: all
+   tasks:
+   - copy: src=packages.yml dest=packages.yml

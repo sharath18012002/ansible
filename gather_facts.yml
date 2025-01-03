@@ -1,0 +1,12 @@
+---
+- name: Gather specific facts
+  hosts: webserver
+  gather_facts: true
+  tasks:
+    - name: Gather specific
+      setup:
+        filter: "ansible_hostname"
+
+    - name: Print a message
+      debug:
+        msg: "Gather facts work "

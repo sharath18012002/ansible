@@ -1,0 +1,21 @@
+---
+- name: Installing packages on webserver
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Install Java
+      yum:
+        name: java
+        state: present
+    
+    - name: Install Apache
+      yum:
+      name: httpd
+      state: latest
+    
+    - name: Ensure httpd service is started and enabled
+      service:
+        name httpd
+        state: started
+        enable: yes
+
