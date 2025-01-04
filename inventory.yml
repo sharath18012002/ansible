@@ -1,0 +1,14 @@
+all:
+  hosts:
+    server1:
+      ansible_host: 172.31.37.166
+      ansible_user: your_ssh_user
+      ansible_connection: ssh
+    server2:
+      ansible_host: 172.31.37.93
+      ansible_user: your_ssh_user
+      ansible_connection: ssh
+    server3:
+      ansible_host: 172.31.39.202
+      ansible_user: your_ssh_user
+      ansible_connection: ssh
