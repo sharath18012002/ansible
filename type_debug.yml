@@ -1,0 +1,13 @@
+---
+ - hosts: localhost
+   gather_facts: false
+   vars:
+    x: 22
+    my_name: sharathkunmar a bhagirath
+    my_number: 1234567890
+   tasks:
+   - debug:
+       msg:
+        - " the value of x is :{{x}} and type:{{x|type_debug}}"
+        - " my name is : {{my_name}} and type {{my_name|type_debug}} "
+        - " my_number is : {{my_number}} and type {{my_number|type_debug}}"
